@@ -5,6 +5,10 @@ pipeline{
         stage("A"){
             steps{
                 echo "========executing A========"
+                script{
+                    sh 'chmod +x mvnw'
+                    sh 'mvnw clean install'
+                }
             }
             post{
                 always{
